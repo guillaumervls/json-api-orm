@@ -1,0 +1,53 @@
+{
+  "name": "json-api-orm",
+  "version": "0.0.0",
+  "description": "Easily create an API that serves JSON",
+  "main": "lib/main.js",
+  "jshintConfig": {
+    "indent": 2,
+    "camelcase": true,
+    "nonew": true,
+    "plusplus": true,
+    "quotmark": true,
+    "bitwise": true,
+    "forin": true,
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "undef": true,
+    "unused": true,
+    "regexp": true,
+    "trailing": true,
+    "noempty": true,
+    "nonbsp": true,
+    "node": true
+  },
+  "scripts": {
+    "lint": "jshint lib test",
+    "test": "npm run lint && node test/main.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guillaumervls/json-api-orm.git"
+  },
+  "keywords": [
+    "json",
+    "api",
+    "orm",
+    "database",
+    "db",
+    "jsonapi"
+  ],
+  "author": "guillaumervls",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guillaumervls/json-api-orm/issues"
+  },
+  "homepage": "https://github.com/guillaumervls/json-api-orm",
+  "devDependencies": {
+    "jshint": "~2.4.4"
+  }
+}
