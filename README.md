@@ -3,7 +3,50 @@ JSON-API ORM [![build status](https://secure.travis-ci.org/guillaumervls/json-ap
 
 *Easily create an [API that serves JSON](http://jsonapi.org/format)*
 
-# Liscence
+### Why ?
+Because it doesn't depend on a specific database.
+Because it supports the fetching of related documents in a single DB query.
+(See "Compound Documents" section in [JSON API spec](http://jsonapi.org/format))
+
+# Install
+`npm install json-api-orm --save`
+
+# Use
+
+## 1. Setup your backend database
+
+Pass `queryCreate`, `queryRead`, `queryUpdate`, `queryDelete` functions.
+They should return a query object that will then be passed to the `exec` function
+
+You also pass an `exec` function to execute queries.
+
+So the query object structure is totally up to you (and your DB system) !
+
+```javascript
+var orm = require('json-api-orm'); // (BTW: orm === orm.setupBackend(...) is true)
+orm.setupBackend({
+  queryCreate: function (type, objects /*array of objects to create*/) {
+    return query;
+  },
+  queryRead: function (type, ids /*array of ids of objects to retrieve*/) {
+    return query;
+  },
+  queryUpdate: function (type, patches /*array of patches to apply*/) {
+    return query;
+  },
+  queryDelete: function (type, ids /*array of ids of objects to delete*/) {
+    return query;
+  },
+  exec: function (query, callback) {
+    callback(null, result);
+  }
+});
+```
+
+# Test
+`npm test`
+
+# Licence
 
 ```
 The MIT License (MIT)
