@@ -27,7 +27,7 @@
   },
   "scripts": {
     "lint": "jshint lib test",
-    "test": "npm run lint && node test/main.test.js"
+    "test": "npm run lint && node test/main.js"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
   },
   "homepage": "https://github.com/guillaumervls/json-api-orm",
   "devDependencies": {
-    "jshint": "~2.4.4"
+    "jshint": "~2.4.4",
+    "tape": "~2.5.0"
   }
 }

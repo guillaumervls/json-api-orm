@@ -1,4 +1,4 @@
-JSON-API ORM
+JSON-API ORM [![build status](https://secure.travis-ci.org/guillaumervls/json-api-orm.png)](http://travis-ci.org/guillaumervls/json-api-orm)
 ============
 
 *Easily create an [API that serves JSON](http://jsonapi.org/format)*
