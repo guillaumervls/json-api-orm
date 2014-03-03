@@ -1,49 +1,45 @@
 var test = require('tape');
 
-var orm = require('../lib/main');
+var orm = require('..');
 
 module.exports.run = function () {
   test('orm level create/read/update/delete', function (t) {
     t.plan(4);
 
-    orm.create('type', [{
+    orm.create(new orm.Type(), {
       id: 'id'
-    }], function (err, result) {
+    }, function (err, result) {
       t.deepEquals(result, {
         query: 'create',
-        type: 'type',
-        objects: [{
+        object: {
           id: 'id'
-        }]
-      });
+        }
+      }, 'created');
     });
 
-    orm.read('type', ['id'], function (err, result) {
+    orm.read(new orm.Type(), ['id'], function (err, result) {
       t.deepEquals(result, {
         query: 'read',
-        type: 'type',
         ids: ['id']
-      });
+      }, 'read');
     });
 
-    orm.update('type', [{
+    orm.update(new orm.Type(), {
       attr: 'attr'
-    }], function (err, result) {
+    }, function (err, result) {
       t.deepEquals(result, {
         query: 'update',
-        type: 'type',
-        patches: [{
+        patch: {
           attr: 'attr'
-        }]
-      });
+        }
+      }, 'updated');
     });
 
-    orm.delete('type', ['id'], function (err, result) {
+    orm.delete(new orm.Type(), 'id', function (err, result) {
       t.deepEquals(result, {
         query: 'delete',
-        type: 'type',
-        ids: ['id']
-      });
+        id: 'id'
+      }, 'deleted');
     });
   });
 };

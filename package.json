@@ -2,7 +2,7 @@
   "name": "json-api-orm",
   "version": "0.0.0",
   "description": "Easily create an API that serves JSON",
-  "main": "lib/main.js",
+  "main": "index.js",
   "jshintConfig": {
     "indent": 2,
     "camelcase": true,
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "lint": "jshint lib test",
-    "test": "npm run lint && node test/main.js"
+    "test": "npm run lint && node test/index.js"
   },
   "repository": {
     "type": "git",
@@ -50,5 +50,10 @@
   "devDependencies": {
     "jshint": "~2.4.4",
     "tape": "~2.5.0"
+  },
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "when": "~2.8.0",
+    "client-error": "~0.1.0"
   }
 }
