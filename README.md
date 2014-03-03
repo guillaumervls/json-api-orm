@@ -3,6 +3,9 @@ JSON-API ORM [![build status](https://secure.travis-ci.org/guillaumervls/json-ap
 
 *Easily create an [API that serves JSON](http://jsonapi.org/format)*
 
+# Status
+*WORK IN PROGRESS...*
+
 ### Why ?
 Because it doesn't depend on a specific database.
 Because it supports the fetching of related documents in a single DB query.
